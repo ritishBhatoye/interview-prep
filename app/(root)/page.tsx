@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { dummyInterviews } from "@/constants";
+import InterviewCard from "@/components/elements/InterviewCard";
 
 const Page = () => {
   return (
@@ -28,7 +29,9 @@ const Page = () => {
       <section className="flex flex-col gap-6 mt-8">
         <h2>Your Interviews </h2>
         <div className="interviews-section">
-          <p>You haven&apos;t taken any interview yet.</p>
+          {dummyInterviews.map((interview) => (
+            <InterviewCard {...interview} key={interview.id} />
+          ))}
         </div>
       </section>
 
@@ -36,9 +39,9 @@ const Page = () => {
         <h2>Take an Interview</h2>
         <div className="interviews-section">
           <p>There are no interviews available</p>
-          <div className="interview-section">
+          <div className="interviews-section">
             {dummyInterviews.map((interview) => (
-              <InterviewCard />
+              <InterviewCard {...interview} key={interview.id} />
             ))}
           </div>
         </div>
