@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import React from "react";
 
 const Page = () => {
@@ -9,6 +10,7 @@ const Page = () => {
           <p className="text-lg">
             Practice on real interview questions & get instant feedback
           </p>
+          <Button className="btb-primary max-sm:w-full" asChild></Button>
         </div>
       </section>
     </>
