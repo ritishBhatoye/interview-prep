@@ -106,3 +106,10 @@ interface InterviewFormProps {
 interface TechIconProps {
   techStack: string[];
 }
+
+//header data
+interface HeaderDataTypeProps {
+  id: number;
+  label: string;
+  link: string;
+}

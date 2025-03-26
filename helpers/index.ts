@@ -1,4 +1,4 @@
-const headerData: any = [
+export const headerData: HeaderDataTypeProps[] = [
   {
     id: 1,
     label: "Home",
@@ -6,22 +6,27 @@ const headerData: any = [
   },
   {
     id: 2,
+    label: "AI Powered Mock Interview",
+    link: "/ai-powered-mock-interview",
+  },
+  {
+    id: 3,
     label: "About",
     link: "/about",
   },
   {
-    id: 1,
-    label: "Home",
-    link: "/",
+    id: 4,
+    label: "Search Job",
+    link: "/Search-Job",
   },
   {
-    id: 1,
-    label: "Home",
-    link: "/",
+    id: 5,
+    label: "CompanyList",
+    link: "/Company List",
   },
   {
-    id: 1,
-    label: "Home",
-    link: "/",
+    id: 6,
+    label: "Articles",
+    link: "/articles",
   },
 ];
