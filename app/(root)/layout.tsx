@@ -4,6 +4,7 @@ import { isAuthenticated } from "@/lib/actions/auth.action";
 import React, { ReactNode } from "react";
 import { redirect } from "next/navigation";
 import Header from "@/components/global/Header";
+import HeroSection from "@/components/global/HeroSection";
 
 const RootLayout = async ({ children }: { children: ReactNode }) => {
   const isUserAuthenticated: boolean = await isAuthenticated();
@@ -12,6 +13,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
   return (
     <div className="root-layout">
       <Header />
+      <HeroSection />
       {children}
     </div>
   );

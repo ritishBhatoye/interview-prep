@@ -14,12 +14,11 @@ export default function Header() {
         </Link>
         <ul className="flex flex-row list-none gap-5 justify-between">
           {headerData.map((header) => (
-            <li
-              className="text-sm md:text-base cursor-pointer lg:text-lg text-gray-500 hover:text-white transition-all duration-200 hover:rounded-4xl hover:p-4 hover:bg-black/30 p-4"
-              key={header.id}
-            >
-              {header.label}
-            </li>
+            <Link href={header.link} key={header.id}>
+              <li className="text-sm md:text-base cursor-pointer lg:text-lg text-gray-500 hover:text-white transition-all duration-200 hover:rounded-4xl hover:p-4 hover:bg-black/30 p-4">
+                {header.label}
+              </li>
+            </Link>
           ))}
         </ul>
       </nav>

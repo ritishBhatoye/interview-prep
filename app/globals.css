@@ -335,3 +335,30 @@
     transform: translateY(0);
   }
 }
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@layer utilities {
+  .animate-orbit {
+    animation: orbit 15s linear infinite;
+  }
+  
+  .tech-icons-container {
+    @apply relative w-[300px] h-[300px] flex items-center justify-center;
+  }
+  
+  .tech-icon {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform;
+  }
+}
+
+@utility perspective-1000 {
+  perspective: 1000px;
+}

@@ -17,12 +17,12 @@ export const headerData: HeaderDataTypeProps[] = [
   {
     id: 4,
     label: "Search Job",
-    link: "/Search-Job",
+    link: "/search-job",
   },
   {
     id: 5,
     label: "CompanyList",
-    link: "/Company List",
+    link: "/company-list",
   },
   {
     id: 6,
