@@ -79,7 +79,7 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
     vapi.stop();
   };
 
-  const latestMessage = messages[messages.length - 1].content;
+  const latestMessage = messages[messages.length - 1]?.content;
 
   const isCallInactiveOrFinished =
     callStatus == CallStatus.INACTIVE || callStatus == CallStatus.FINISHED;
