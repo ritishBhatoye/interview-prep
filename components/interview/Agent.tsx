@@ -59,6 +59,30 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (callStatus == CallStatus.FINISHED) router.push("/");
+  }, [messages, callStatus, type, userId]);
+
+  const handleCall = async () => {
+    setCallStatus(CallStatus.CONNECTING);
+
+    await vapi.start(process.env.NEXT_PUBLIC_VAPI_WORKFLOW_ID!, {
+      variableValues: {
+        username: userName,
+        userId: userId,
+      },
+    });
+  };
+  const handleDisconnectCall = async () => {
+    setCallStatus(CallStatus.FINISHED);
+
+    vapi.stop();
+  };
+
+  const latestMessage = messages[messages.length - 1].content;
+
+  const isCallInactiveOrFinished =
+    callStatus == CallStatus.INACTIVE || callStatus == CallStatus.FINISHED;
   return (
     <>
       <div className="call-view">
@@ -89,7 +113,7 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
       </div>
       <div className="w-full flex justify-between">
         {callStatus != "ACTIVE" ? (
-          <button className="relative btn-call">
+          <button className="relative btn-call" onClick={handleCall}>
             <span
               className={cn(
                 "absolute animate-ping rounded-full opacity-75",
@@ -97,27 +121,25 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
               )}
             />
 
-            <span>
-              {callStatus == "INACTIVE" || callStatus == "FINISHED"
-                ? "Call"
-                : "..."}
-            </span>
+            <span>{isCallInactiveOrFinished ? "Call" : "..."}</span>
           </button>
         ) : (
-          <button className="btn-disconnect">End</button>
+          <button className="btn-disconnect" onClick={handleDisconnectCall}>
+            End
+          </button>
         )}
       </div>
       {messages.length > 0 && (
         <div className="transcript-border">
           <div className="transcript">
             <p
-              key={lastMessage}
+              key={latestMessage}
               className={cn(
                 "transition-opacity duration-500 opacity-0",
                 "animate-fadeIn opacity-100"
               )}
             >
-              {lastMessage}
+              {latestMessage}
             </p>
           </div>
         </div>
