@@ -10,9 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
-/firebase
-client.ts
-admin.ts
+# /firebase
+# client.ts
+# admin.ts
 # testing
 /coverage
 
