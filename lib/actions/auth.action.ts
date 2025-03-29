@@ -49,9 +49,10 @@ export async function signUp(params: SignUpParams) {
       success: true,
       message: "Account created successfully. Please sign in.",
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error creating user:", error);
 
+    // Handle Firebase specific errors
     if (error.code === "auth/email-already-exists") {
       return {
         success: false,
