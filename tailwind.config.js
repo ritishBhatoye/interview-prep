@@ -11,6 +11,10 @@ module.exports = {
         sans: ["Inter", "system-ui", "sans-serif"],
         display: ["Poppins", "system-ui", "sans-serif"],
       },
+      fontSize: {
+        "2.5xl": "1.625rem",
+        "2.75xl": "1.75rem",
+      },
     },
   },
   plugins: [],

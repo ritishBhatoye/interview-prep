@@ -107,9 +107,20 @@ interface TechIconProps {
   techStack: string[];
 }
 
-//header data
+//header data type
 interface HeaderDataTypeProps {
   id: number;
   label: string;
   link: string;
+}
+
+//footer data type
+
+interface FooterDataType {
+  id: number;
+  label: string;
+  subLabel: {
+    label: string;
+    link: string;
+  }[];
 }
