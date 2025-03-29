@@ -1,18 +1,23 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { isAuthenticated } from "./lib/actions/auth.action";
 
-export async function middleware(request: NextRequest) {
-  const isAuth = await isAuthenticated();
+// Define public routes that don't require authentication
+const publicRoutes = ["/sign-in", "/sign-up", "/", "/about"];
 
-  // If the user is not authenticated and trying to access protected routes
-  if (!isAuth && !request.nextUrl.pathname.startsWith("/sign-in")) {
-    return NextResponse.redirect(new URL("/sign-in", request.url));
+export function middleware(request: NextRequest) {
+  const session = request.cookies.get("session");
+  const pathname = request.nextUrl.pathname;
+
+  // Allow public routes
+  if (publicRoutes.includes(pathname)) {
+    return NextResponse.next();
   }
 
-  // If the user is authenticated and trying to access auth pages
-  if (isAuth && request.nextUrl.pathname.startsWith("/sign-in")) {
-    return NextResponse.redirect(new URL("/dashboard", request.url));
+  // Redirect to sign-in if no session exists
+  if (!session) {
+    const signInUrl = new URL("/sign-in", request.url);
+    signInUrl.searchParams.set("callbackUrl", pathname);
+    return NextResponse.redirect(signInUrl);
   }
 
   return NextResponse.next();
