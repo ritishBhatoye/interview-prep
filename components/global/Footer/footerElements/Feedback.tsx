@@ -1,5 +1,5 @@
 "use client";
-
+// import ".";
 import React from "react";
 
 import { Form } from "@/components/ui/form";
@@ -7,7 +7,7 @@ import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
 import { z } from "zod";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import FormField from "@/components/elements/FormField";
@@ -20,7 +20,7 @@ const feedbackFormSchema = () => {
 };
 
 const Feedback = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   const formSchema = feedbackFormSchema();
   const form = useForm<z.infer<typeof formSchema>>({
@@ -32,7 +32,10 @@ const Feedback = () => {
   });
 
   return (
-    <div className="flex flex-col items-start">
+    <div
+      className="flex !h-full rounded-md  p-4 m-4 flex-col items-start"
+      style={{ background: "black" }}
+    >
       <div>
         <h1 className="">FEEDBACK</h1>
         <p className="text-white/40 text-2.5xl">
@@ -65,6 +68,7 @@ const Feedback = () => {
           <p>Send a Request</p>
         </Button>
       </div>
+      <p className="mt-auto">Privacy</p>
     </div>
   );
 };

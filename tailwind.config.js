@@ -15,6 +15,12 @@ module.exports = {
         "2.5xl": "1.625rem",
         "2.75xl": "1.75rem",
       },
+      colors: {
+        "grey-matte": {
+          100: "#22242A",
+          200: "#17181C",
+        },
+      },
     },
   },
   plugins: [],
