@@ -321,3 +321,24 @@ export const dummyInterviews = [
     createdAt: "2024-03-08T09:50:00Z",
   },
 ];
+
+//footer social icons
+
+export const socialIcons = [
+  {
+    id: 1,
+    icon: "/facebook.png",
+  },
+
+  {
+    id: 2,
+    icon: "/pinterest.png",
+  },
+
+  {
+    id: 3,
+    icon: "/telegram.png",
+  },
+
+  { id: 4, icon: "/yahoo.png" },
+];

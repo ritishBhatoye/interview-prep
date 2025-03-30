@@ -32,15 +32,12 @@ const Feedback = () => {
   });
 
   return (
-    <div
-      className="flex !h-full rounded-md  p-4 m-4 flex-col items-start"
-      style={{ background: "black" }}
-    >
-      <div>
-        <h1 className="">FEEDBACK</h1>
-        <p className="text-white/40 text-2.5xl">
-          Seeking personalized support?
-          <span className="text-white">Request a call from our team</span>{" "}
+    <div className="flex h-full gap-32 p-12 rounded-3xl bg-black   flex-col items-start">
+      <div className="gap-3 flex-col flex items-start">
+        <h1 className="text-3xl">FEEDBACK</h1>
+        <p className="text-white/40 text-lg md:text-2xl lg:!text-2xl">
+          Seeking personalized support? {`  `}
+          <span className="text-white"> Request a call from our team</span>{" "}
         </p>
 
         <Form {...form}>
@@ -64,11 +61,11 @@ const Feedback = () => {
             />
           </form>
         </Form>
-        <Button>
-          <p>Send a Request</p>
+        <Button className="btn-primary max-sm:w-full mt-5">
+          Send a Request
         </Button>
       </div>
-      <p className="mt-auto">Privacy</p>
+      <p className="flex-1 mt-auto">Privacy</p>
     </div>
   );
 };
