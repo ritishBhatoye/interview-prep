@@ -21,6 +21,22 @@ module.exports = {
           200: "#17181C",
         },
       },
+      keyframes: {
+        orbit: {
+          "0%": { transform: "rotate(0deg) translateX(200px) rotate(0deg)" },
+          "100%": {
+            transform: "rotate(360deg) translateX(200px) rotate(-360deg)",
+          },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+      },
+      animation: {
+        orbit: "orbit 20s linear infinite",
+        float: "float 6s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
