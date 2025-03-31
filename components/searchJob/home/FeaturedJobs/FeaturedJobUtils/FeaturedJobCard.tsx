@@ -9,7 +9,7 @@ interface props {
 
 const FeaturedJobCard = ({ featureJob }: props) => {
   return (
-    <div className="flex flex-col p-5 bg-gradient-to-tr from-ocean-blue-500 to-green-shimmer">
+    <div className="flex flex-col p-5 bg-custom-gradient rounded-4xl">
       <div className="flex flex-row justify-between items-start">
         <Image
           src={featureJob.logo}
@@ -17,7 +17,7 @@ const FeaturedJobCard = ({ featureJob }: props) => {
           height={50}
           width={50}
         />
-        <span className="rounded-3xl p-4 border bg-ocean-blue-500/20 border-ocean-blue-500/30">
+        <span className="rounded-3xl  p-4 border bg-ocean-blue-500/20 border-ocean-blue-500/30">
           <p className="text-base font-normal">Full Time</p>
         </span>
       </div>
@@ -66,7 +66,7 @@ const FeaturedJobCard = ({ featureJob }: props) => {
             </span>
           ))}
         </div>
-        <p className="text-2xl  font-medium p-3 rounded-full">
+        <p className="text-2xl font-medium p-3 rounded-full">
           {featureJob.salary}
         </p>
       </div>

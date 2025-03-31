@@ -7,7 +7,7 @@ interface props {
 
 export const SectionHeader = ({ title }: props) => {
   return (
-    <div className="flex flex-row justify-between items-center">
+    <div className="flex flex-row w-full justify-between items-center">
       <h1 className="text-5xl font-semibold">
         {" "}
         {title}{" "}
