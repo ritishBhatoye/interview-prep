@@ -19,7 +19,7 @@ const ExploreCategoriesCard = ({ categories }: props) => {
         rotateY: 1,
         transition: { duration: 0.2 },
       }}
-      className="flex cursor-pointer hover:bg-white/20 duration-150 flex-col items-start gap-5 p-4 border border-gray-500 rounded-md"
+      className="flex cursor-pointer bg-gradient-to-tl from-blue-500/80 to-blue-950/100 hover:from-blue-800/50 hover:to-blue-900/30 duration-150 flex-col items-start gap-5 p-4 border border-gray-500 rounded-md"
       style={{ perspective: 1000 }}
     >
       <motion.div whileHover={{ z: 20 }} transition={{ duration: 0.2 }}>

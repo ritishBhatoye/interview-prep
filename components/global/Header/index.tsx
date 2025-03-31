@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { headerData } from "@/helpers";
 
 export default function Header() {
+  const [isSelectTab, setIsSelectTab] = useState(1);
   return (
     <div className="w-full ">
       <nav className="flex flex-row items-center list-none gap-12 bg-white/8 hover:bg-white/10 rounded-4xl p-4">
@@ -14,8 +17,18 @@ export default function Header() {
         </Link>
         <ul className="flex flex-row list-none gap-5 justify-between">
           {headerData.map((header) => (
-            <Link href={header.link} key={header.id}>
-              <li className="text-sm md:text-base cursor-pointer lg:text-lg text-gray-500 hover:text-white transition-all duration-200 hover:rounded-4xl hover:p-4 hover:bg-black/30 p-4">
+            <Link
+              onClick={() => setIsSelectTab(header.id)}
+              href={header.link}
+              key={header.id}
+            >
+              <li
+                className={`text-sm md:text-base ${
+                  isSelectTab == header.id
+                    ? "rounded-4xl bg-black/30 p-4 text-white"
+                    : ""
+                } cursor-pointer lg:text-lg text-gray-500 hover:text-white transition-all duration-200 hover:rounded-4xl hover:p-4 hover:bg-black/30 p-4`}
+              >
                 {header.label}
               </li>
             </Link>
