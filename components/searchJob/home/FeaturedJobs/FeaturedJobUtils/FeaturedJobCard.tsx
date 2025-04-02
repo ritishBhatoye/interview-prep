@@ -1,7 +1,10 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
 import { FeatureCardDataType } from "@/types/searchJob";
+import { motion } from "framer-motion";
 
 interface props {
   featureJob: FeatureCardDataType;
@@ -9,7 +12,15 @@ interface props {
 
 const FeaturedJobCard = ({ featureJob }: props) => {
   return (
-    <div className="flex flex-col p-5 bg-custom-gradient rounded-4xl">
+    <motion.div
+      whileHover={{
+        scale: 0.9,
+        rotateX: 40,
+        rotateY: 1,
+        transition: { duration: 0.2 },
+      }}
+      className="flex flex-col perspective-1000 p-5 bg-gradient-to-tl from-blue-500/80 to-blue-950/100 hover:from-blue-800/50 hover:to-blue-900/30 duration-200  hover:opacity-90 cursor-pointer rounded-4xl "
+    >
       <div className="flex flex-row justify-between items-start">
         <Image
           src={featureJob.logo}
@@ -17,7 +28,7 @@ const FeaturedJobCard = ({ featureJob }: props) => {
           height={50}
           width={50}
         />
-        <span className="rounded-3xl  p-4 border bg-ocean-blue-500/20 border-ocean-blue-500/30">
+        <span className="rounded-full p-4 border-[1px] bg-ocean-blue-500 shadow-2xl border-ocean-blue-500">
           <p className="text-base font-normal">Full Time</p>
         </span>
       </div>
@@ -37,11 +48,11 @@ const FeaturedJobCard = ({ featureJob }: props) => {
             <span
               className={`px-3 py-2 rounded-full border ${
                 index == 0
-                  ? "bg-ocean-blue-500/20 border-ocean-blue-500/30"
+                  ? "bg-ocean-blue-500/50 border-ocean-blue-500/30"
                   : index == 1
                   ? "bg-fluxx/20 border-fluxx/30"
                   : index == 2
-                  ? "bg-cyber-mint-500/20 border-cyber-mint-500/30"
+                  ? "bg-cyber-mint-500/90 border-cyber-mint-500/30"
                   : index == 3
                   ? "bg-sunset-orange-500/20 border-sunset-orange-500/30"
                   : "bg-green-shimmer/20 border-green-shimmer/30"
@@ -51,7 +62,7 @@ const FeaturedJobCard = ({ featureJob }: props) => {
               <p
                 className={`${
                   index == 0
-                    ? "text-ocean-blue-200"
+                    ? "text-ocean-blue-200 "
                     : index == 1
                     ? "text-fluxx"
                     : index == 2
@@ -70,7 +81,7 @@ const FeaturedJobCard = ({ featureJob }: props) => {
           {featureJob.salary}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

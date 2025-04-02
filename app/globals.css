@@ -64,12 +64,12 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --grey-matte-100: #22242A;
+  /* --grey-matte-100: #22242A;
   --grey-matte-200: #17181C;
   --green-shimmer: #56CDAD;
-  --fluxx: #FFB836;
-  --midnight-dream: #4640DE;
-  
+  /* --fluxx: #FFB836; */
+  /* --midnight-dream: #4640DE; */
+   /* */ 
   --cosmic-purple-100: #E4D0FF;
   --cosmic-purple-200: #C3A9FF;
   --cosmic-purple-500: #8B5CF6;
@@ -405,12 +405,12 @@
   .bg-ocean-blue-500 { background-color: var(--ocean-blue-500); }
   .bg-ocean-blue-900 { background-color: var(--ocean-blue-900); }
   
-  .text-grey-matte-100 { color: var(--grey-matte-100); }
+  /* .text-grey-matte-100 { color: var(--grey-matte-100); }
   .text-grey-matte-200 { color: var(--grey-matte-200); }
   .text-green-shimmer { color: var(--green-shimmer); }
   .text-fluxx { color: var(--fluxx); }
   .text-midnight-dream { color: var(--midnight-dream); }
-  
+   */
   .text-cosmic-purple-100 { color: var(--cosmic-purple-100); }
   .text-cosmic-purple-200 { color: var(--cosmic-purple-200); }
   .text-cosmic-purple-500 { color: var(--cosmic-purple-500); }
