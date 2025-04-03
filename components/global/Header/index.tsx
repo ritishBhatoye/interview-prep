@@ -9,7 +9,7 @@ import { headerData } from "@/helpers";
 export default function Header() {
   const [isSelectTab, setIsSelectTab] = useState(1);
   return (
-    <div className="w-full ">
+    <div className="w-full root-layout">
       <nav className="flex flex-row items-center list-none gap-12 bg-white/8 hover:bg-white/10 rounded-4xl p-4">
         <Link href="/" className="flex flex-row items-center gap-2">
           <Image src={"/logo.svg"} width={38} height={32} alt="logo" />

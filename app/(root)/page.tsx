@@ -7,7 +7,7 @@ import InterviewCard from "@/components/elements/InterviewCard";
 
 const Page = () => {
   return (
-    <>
+    <div className="root-layout">
       <section className="card-cta">
         <div className="flex flex-col gap-6 max-w-lg">
           <h2>Get Interview-Ready with AI-Powered Practice & Feedback</h2>
@@ -28,7 +28,7 @@ const Page = () => {
       </section>
       <section className="flex flex-col gap-6 mt-8">
         <h2>Your Interviews </h2>
-        <div className="interviews-section">
+        <div className="interviews-section ">
           {dummyInterviews.map((interview) => (
             <InterviewCard {...interview} key={interview.id} />
           ))}
@@ -36,7 +36,7 @@ const Page = () => {
       </section>
 
       <section className="flex flex-col gap-6 mt-8">
-        <h2>Take an Interview</h2>
+        <h2 className="">Take an Interview</h2>
         <div className="interviews-section">
           <p>There are no interviews available</p>
           <div className="interviews-section">
@@ -46,7 +46,7 @@ const Page = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
