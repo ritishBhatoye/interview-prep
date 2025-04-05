@@ -64,12 +64,13 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  /* --grey-matte-100: #22242A;
+  --grey-matte-100: #22242A;
   --grey-matte-200: #17181C;
   --green-shimmer: #56CDAD;
-  /* --fluxx: #FFB836; */
-  /* --midnight-dream: #4640DE; */
-   /* */ 
+  --midnight-dream: #4640DE;
+   
+  --fluxx: #FFB836;
+
   --cosmic-purple-100: #E4D0FF;
   --cosmic-purple-200: #C3A9FF;
   --cosmic-purple-500: #8B5CF6;
