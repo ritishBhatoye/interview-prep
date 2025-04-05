@@ -139,3 +139,12 @@ export interface ResumeAnalysisReviewTabViewDataType {
   image: string;
   ctaLabel: string;
 }
+
+export interface SectionDataType {
+  id: number;
+  title: string;
+  subTitle: string;
+  description: string;
+  imgSrc: string;
+  ctaLabel?: string;
+}

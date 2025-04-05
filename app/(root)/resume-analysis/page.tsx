@@ -4,6 +4,7 @@ import HeroSection from "@/components/ResumeAnalysis/HeroSection";
 import ResumeAnalysis from "@/components/ResumeAnalysis/ResumeAnalysisReview";
 import AccelerateCareer from "@/components/ResumeAnalysis/AccelerateCareer";
 import GetInTouch from "@/components/ResumeAnalysis/GetInTouch";
+import ResumeHomeAboutUs from "@/components/ResumeAnalysis/ResumeHomeAboutUs";
 
 const ResumeAnalysisPage = () => {
   return (
@@ -12,6 +13,7 @@ const ResumeAnalysisPage = () => {
       <ResumeAnalysis />
       <AccelerateCareer />
       <GetInTouch />
+      <ResumeHomeAboutUs />
     </div>
   );
 };
