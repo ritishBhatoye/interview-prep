@@ -1,64 +1,94 @@
 "use client";
 
-import { ResumeAnalysisReviewTabsData } from "@/types/resumeAnalysis/dummyData/resumeAnalysis";
+import { motion, AnimatePresence } from "framer-motion";
+
+import {
+  ResumeAnalysisReviewTabScreenData,
+  ResumeAnalysisReviewTabsData,
+} from "@/types/resumeAnalysis/dummyData/resumeAnalysis";
 import React, { useState } from "react";
+import ResumeAnalysisTabScreen from "./ResumeAnalysisReviewUtils/ResumeAnalysisTabScreen";
 
 const ResumeAnalysis = (): React.JSX.Element => {
   const [activeTab, setActiveTab] = useState(ResumeAnalysisReviewTabsData[0].value);
 
   return (
-    <div className="flex flex-col w-full gap-8">
+    <div className="flex flex-col">
       {/* Tabs Container */}
-      <div className="flex flex-wrap gap-4 p-4 bg-gradient-to-r from-ocean-blue-500/20 to-green-shimmer/20 rounded-xl">
+      <div className="flex flex-wrap gap-4  max-w-7xl mx-auto rounded-xl">
         {ResumeAnalysisReviewTabsData.map((tab) => (
-          <button
+          <motion.button
             key={tab.id}
             onClick={() => setActiveTab(tab.value)}
-            className={`px-6 py-3 rounded-full transition-all duration-300 ${
+            className={`px-7 py-4  cursor-pointer transition-all duration-300 ${
               activeTab === tab.value
-                ? "bg-gradient-to-r from-ocean-blue-500 to-green-shimmer text-white shadow-lg"
-                : "bg-white/10 text-gray-200 hover:bg-white/20"
+                ? " font-semibold bg-gradient-to-tl  rounded-t-full from-blue-500/100 to-blue-900/30 duration-200  border-white/10  text-white shadow-lg"
+                : " text-primary-100  bg-gradient-to-tl border-white/10 hover:from-blue-800/50 hover:to-blue-900/30 "
             }`}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
             {tab.label}
-          </button>
+          </motion.button>
         ))}
       </div>
-
-      {/* Content Container */}
-      <div className="p-6 bg-gradient-to-r from-grey-matte-100 to-grey-matte-200 rounded-xl min-h-[400px]">
-        {/* Instant Resume Review Content */}
+      <AnimatePresence mode="wait">
         {activeTab === "instant-resume-review" && (
-          <div className="text-white">
-            <h2 className="text-2xl font-bold mb-4">Instant Resume Review</h2>
-            <p>Content for instant resume review...</p>
-          </div>
+          <motion.div
+            key="instant-review"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ResumeAnalysisTabScreen
+              ResumeAnalysisTabScreenData={ResumeAnalysisReviewTabScreenData[0]}
+            />
+          </motion.div>
         )}
 
-        {/* Resume Samples Content */}
         {activeTab === "resume-samples" && (
-          <div className="text-white">
-            <h2 className="text-2xl font-bold mb-4">Resume Samples</h2>
-            <p>Content for resume samples...</p>
-          </div>
+          <motion.div
+            key="resume-samples"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ResumeAnalysisTabScreen
+              ResumeAnalysisTabScreenData={ResumeAnalysisReviewTabScreenData[1]}
+            />
+          </motion.div>
         )}
 
-        {/* Resume Targeting Content */}
         {activeTab === "resume-targeting" && (
-          <div className="text-white">
-            <h2 className="text-2xl font-bold mb-4">Resume Targeting</h2>
-            <p>Content for resume targeting...</p>
-          </div>
+          <motion.div
+            key="resume-targeting"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ResumeAnalysisTabScreen
+              ResumeAnalysisTabScreenData={ResumeAnalysisReviewTabScreenData[2]}
+            />
+          </motion.div>
         )}
 
-        {/* LinkedIn Optimization Content */}
         {activeTab === "linkedin-optimization" && (
-          <div className="text-white">
-            <h2 className="text-2xl font-bold mb-4">LinkedIn Optimization</h2>
-            <p>Content for LinkedIn optimization...</p>
-          </div>
+          <motion.div
+            key="linkedin-optimization"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ResumeAnalysisTabScreen
+              ResumeAnalysisTabScreenData={ResumeAnalysisReviewTabScreenData[3]}
+            />
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </div>
   );
 };

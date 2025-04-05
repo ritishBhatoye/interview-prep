@@ -14,8 +14,8 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-row items-center  p-2 w-full justify-between bg-gradient-to-tl ">
-      <div className="flex flex-col items-start root-layout p-5 mx-auto">
+    <div className="flex flex-row items-center  p-2  w-full justify-between bg-gradient-to-tl ">
+      <div className="flex flex-col items-start  w-5/12 gap-12 p-5 ml-auto ">
         <h1 className="text-lg md:text-3xl lg:text-5xl 2xl:text-6xl font-bold bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text text-transparent ">
           Improve your resume and LinkedIn profile
         </h1>
