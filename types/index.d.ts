@@ -124,3 +124,18 @@ interface FooterDataType {
     link: string;
   }[];
 }
+
+//
+export interface ResumeAnalysisReviewTabDataType {
+  id: number;
+  label: string;
+  value: string;
+}
+
+export interface ResumeAnalysisReviewTabViewDataType {
+  id: number;
+  title: string;
+  subTitle: string;
+  image: string;
+  ctaLabel: string;
+}

@@ -1,14 +1,10 @@
+// eslint-disable-next-line prettier/prettier
+import { ChevronDoubleDownIcon, ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import React from "react";
 
-import Image from "next/image";
-
-import {
-  ChevronDoubleDownIcon,
-  ChevronDoubleRightIcon,
-} from "@heroicons/react/24/outline";
-
-import { Button } from "@/components/ui/button";
 import TypingEffect from "@/components/elements/TypingEffect";
+import { Button } from "@/components/ui/button";
 
 // interface props{
 //     title?:string;
