@@ -12,16 +12,17 @@ import {
 
 const Page = async () => {
   const user = await getCurrentUser();
+  if (!user) return;
 
   const [userInterview, latestInterviews] = await Promise.all([
-    await getInterviewsByUserId(user?.id!),
-    getLatestInterviews({ userId: user?.id! }),
+    getInterviewsByUserId(user.id),
+    getLatestInterviews({ userId: user.id }),
   ]);
 
-  const hasPastInterviews = userInterview?.length > 0;
+  const hasPastInterviews = userInterview?.length ?? 0 > 0;
   //these the interviews that are not being created by us but by other users
 
-  const hasUpcomingInterviews = latestInterviews?.length > 0;
+  const hasUpcomingInterviews = latestInterviews?.length ?? 0 > 0;
 
   return (
     <>
