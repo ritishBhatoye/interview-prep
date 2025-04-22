@@ -1,3 +1,5 @@
+import { FooterDataType } from "@/types";
+
 export const headerData: HeaderDataTypeProps[] = [
   {
     id: 1,
@@ -11,23 +13,23 @@ export const headerData: HeaderDataTypeProps[] = [
   },
   {
     id: 3,
-    label: "About",
-    link: "/about",
-  },
-  {
-    id: 4,
     label: "Search Job",
     link: "/search-job",
   },
+  // {
+  //   id: 4,
+  //   label: "CompanyList",
+  //   link: "/company-list",
+  // },
   {
-    id: 5,
-    label: "CompanyList",
-    link: "/company-list",
-  },
-  {
-    id: 6,
+    id: 4,
     label: "Articles",
     link: "/articles",
+  },
+  {
+    id: 5,
+    label: "Resume Analysis",
+    link: "/resume-analysis",
   },
 ];
 

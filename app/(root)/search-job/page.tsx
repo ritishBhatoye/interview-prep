@@ -7,8 +7,10 @@ const SearchJobPage = () => {
   return (
     <div>
       <HeroSection />
-      <ExploreCategory />
-      <FeaturedJobs />
+      <div className="w-10/12 2xl:w-9/12 mx-auto">
+        <ExploreCategory />
+        <FeaturedJobs />
+      </div>
     </div>
   );
 };
