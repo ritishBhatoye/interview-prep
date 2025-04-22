@@ -6,26 +6,39 @@ import { BriefcaseIcon, MagnifyingGlassIcon, MapPinIcon } from "@heroicons/react
 import React, { useState } from "react";
 
 const SearchHeader = () => {
-  const [salary, setSalary]: [number, React.Dispatch<React.SetStateAction<number>>] = useState(0);
+  const [salaryRange, setSalaryRange] = useState<[number, number]>([0, 1200]);
 
   return (
     <div className="w-full root-layout">
-      <nav className="flex justify-between flex-row items-center gap-12 bg-white/8 hover:bg-white/10 rounded-4xl p-4">
-        <div className="flex flex-row items-center gap-3">
-          <MagnifyingGlassIcon className="w-8 h-8" />
-          <Input className="border-0" placeholder="Search typing your job search input" />
-        </div>
-        <div className="flex flex-row items-center gap-3">
-          <MapPinIcon className="w-10 h-10 p-3 border border-white rounded-full cursor-pointer hover:opacity-75" />
-          <BriefcaseIcon className="size-6 border border-white rounded-full cursor-pointer hover:opacity-75" />
-
-          <CustomRangeSlider
-            className="w-full"
-            min={0}
-            max={10000}
-            values={[salary, 1200]}
-            step={1}
+      <nav className="flex flex-col lg:flex-row justify-between items-center gap-6 bg-white/10 hover:bg-white/20 rounded-3xl p-4 transition-all">
+        {/* Search Bar */}
+        <div className="flex items-center gap-3 w-fit">
+          <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+          <Input
+            className="!border-0 !bg-white/10 text-white placeholder:text-white/70 px-6 py-3 rounded-xl focus-visible:ring-0 w-full"
+            placeholder="Search jobs..."
           />
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-2/5">
+          <div className="flex gap-3">
+            <MapPinIcon className="w-10 h-10 p-2 border border-white rounded-full cursor-pointer hover:bg-white/10 transition-all" />
+            <BriefcaseIcon className="w-10 h-10 p-2 border border-white rounded-full cursor-pointer hover:bg-white/10 transition-all" />
+          </div>
+
+          <div className="w-full flex flex-col gap-4 justify-items-center sm:w-2/3">
+            <p className="text-white text-sm mt-1 text-center">
+              Salary Range: ₹{salaryRange[0]} - ₹{salaryRange[1]}
+            </p>
+            <CustomRangeSlider
+              className="slider"
+              min={0}
+              max={10000}
+              values={salaryRange}
+              step={100}
+              onChange={setSalaryRange}
+            />
+          </div>
         </div>
       </nav>
     </div>
