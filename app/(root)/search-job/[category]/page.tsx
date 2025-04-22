@@ -1,3 +1,4 @@
+import SearchHeader from "@/components/searchJob/SearchHeader";
 import React from "react";
 
 // Define the props interface for the page component
@@ -12,7 +13,8 @@ const CategoryPage = ({ params }: CategoryPageProps) => {
   const { category } = params;
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="">
+      <SearchHeader />
       <h1 className="text-3xl font-bold mb-6">Jobs in {category}</h1>
       {/* Add your category-specific content here */}
       <div>{/* You can fetch and display jobs based on the category */}</div>
