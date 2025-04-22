@@ -18,3 +18,9 @@ export interface FeatureCardDataType {
   salary: string;
   type: string;
 }
+
+export interface SearchFilterDataType {
+  id: number;
+  label: string;
+  options: string[];
+}
