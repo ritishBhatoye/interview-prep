@@ -1,3 +1,4 @@
+import SearchFilter from "@/components/searchJob/Category/SearchFilter";
 import SearchHeader from "@/components/searchJob/SearchHeader";
 import React from "react";
 
@@ -15,9 +16,10 @@ const CategoryPage = ({ params }: CategoryPageProps) => {
   return (
     <div className="">
       <SearchHeader />
-      <h1 className="text-3xl font-bold mb-6">Jobs in {category}</h1>
-      {/* Add your category-specific content here */}
-      <div>{/* You can fetch and display jobs based on the category */}</div>
+      <div className="w-10/12 2xl:w-9/12 mx-auto flex flex-row items-center">
+        <SearchFilter />
+        <h1 className="text-3xl font-bold mb-6">Jobs in {category}</h1>
+      </div>
     </div>
   );
 };

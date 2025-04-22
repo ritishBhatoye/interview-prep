@@ -2,7 +2,12 @@
 
 import CustomRangeSlider from "@/components/ui/CustomRangeSlider";
 import { Input } from "@/components/ui/input";
-import { BriefcaseIcon, MagnifyingGlassIcon, MapPinIcon } from "@heroicons/react/24/outline";
+import {
+  BriefcaseIcon,
+  ClockIcon,
+  MagnifyingGlassIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 
 const SearchHeader = () => {
@@ -11,7 +16,6 @@ const SearchHeader = () => {
   return (
     <div className="w-full root-layout">
       <nav className="flex flex-col lg:flex-row justify-between items-center gap-6 bg-white/10 hover:bg-white/20 rounded-3xl p-4 transition-all">
-        {/* Search Bar */}
         <div className="flex items-center gap-3 w-fit">
           <MagnifyingGlassIcon className="w-6 h-6 text-white" />
           <Input
@@ -24,6 +28,7 @@ const SearchHeader = () => {
           <div className="flex gap-3">
             <MapPinIcon className="w-10 h-10 p-2 border border-white rounded-full cursor-pointer hover:bg-white/10 transition-all" />
             <BriefcaseIcon className="w-10 h-10 p-2 border border-white rounded-full cursor-pointer hover:bg-white/10 transition-all" />
+            <ClockIcon className="w-10 h-10 p-2 border border-white rounded-full cursor-pointer hover:bg-white/10 transition-all" />
           </div>
 
           <div className="w-full flex flex-col gap-4 justify-items-center sm:w-2/3">
