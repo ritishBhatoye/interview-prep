@@ -14,7 +14,7 @@ const SearchHeader = () => {
   const [salaryRange, setSalaryRange] = useState<[number, number]>([0, 1200]);
 
   return (
-    <div className="w-full root-layout">
+    <div className="mx-auto py-10 w-10/12 2xl:w-9/12 max-w-screen-2xl">
       <nav className="flex flex-col lg:flex-row justify-between items-center gap-6 bg-white/10 hover:bg-white/20 rounded-3xl p-4 transition-all">
         <div className="flex items-center gap-3 w-fit">
           <MagnifyingGlassIcon className="w-6 h-6 text-white" />

@@ -1,4 +1,5 @@
 import SearchFilter from "@/components/searchJob/Category/SearchFilter";
+import FeaturedJobs from "@/components/searchJob/home/FeaturedJobs";
 import SearchHeader from "@/components/searchJob/SearchHeader";
 import React from "react";
 
@@ -14,12 +15,9 @@ const CategoryPage = ({ params }: CategoryPageProps) => {
   const { category } = params;
 
   return (
-    <div className="">
-      <SearchHeader />
-      <div className="w-10/12 2xl:w-9/12 mx-auto flex flex-row items-center">
-        <SearchFilter />
-        <h1 className="text-3xl font-bold mb-6">Jobs in {category}</h1>
-      </div>
+    <div className="flex flex-col items-start gap-5">
+      <h1 className="text-3xl font-bold mb-6">Jobs in {category}</h1>
+      <FeaturedJobs />
     </div>
   );
 };
