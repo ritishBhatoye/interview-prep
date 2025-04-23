@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { vapi } from "@/lib/vapi.sdk";
 import { interviewer } from "@/constants";
 import { createFeedback } from "@/lib/actions/general.action";
+import { AgentProps } from "@/types";
 
 enum CallStatus {
   INACTIVE = "INACTIVE",
@@ -21,13 +22,7 @@ interface SavedMessage {
   content: string;
 }
 
-const Agent = ({
-  userName,
-  userId,
-  type,
-  interviewId,
-  questions,
-}: AgentProps) => {
+const Agent = ({ userName, userId, type, interviewId, questions }: AgentProps) => {
   const router = useRouter();
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [callStatus, setCallStatus] = useState<CallStatus>(CallStatus.INACTIVE);
@@ -108,9 +103,7 @@ const Agent = ({
       let formattedQuestions = "";
 
       if (questions) {
-        formattedQuestions = questions
-          .map((question) => `- ${question}`)
-          .join("\n");
+        formattedQuestions = questions.map((question) => `- ${question}`).join("\n");
       }
       await vapi.start(interviewer, {
         variableValues: {
