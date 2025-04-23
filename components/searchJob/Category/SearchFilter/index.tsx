@@ -4,7 +4,7 @@ import React from "react";
 
 const SearchFilter = () => {
   return (
-    <div className="flex flex-col items-start gap-5 bg-custom-gradient p-5 rounded-3xl">
+    <div className="flex flex-col items-start gap-5 bg-gradient-to-tl from-[var(--cosmic-purple-900)] via-[var(--cosmic-purple-500)] to-[var(--cosmic-purple-900)]  p-5 rounded-3xl">
       <h1 className="text-medium text-2xl">Filter </h1>
 
       <div className="">
