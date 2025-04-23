@@ -4,7 +4,7 @@ import { z } from "zod";
 import Link from "next/link";
 import Image from "next/image";
 import { toast } from "sonner";
-// import { auth } from "@/firebase/client";
+import { auth } from "@/firebase/client";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -14,9 +14,9 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 
+import { signIn, signUp } from "@/lib/actions/auth.action";
 import FormField from "./elements/FormField";
 import { FormType } from "@/types";
-// import FormField from "./FormField";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
@@ -44,11 +44,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
       if (type === "sign-up") {
         const { name, email, password } = data;
 
-        const userCredential = await createUserWithEmailAndPassword(
-          // auth,
-          email,
-          password
-        );
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 
         const result = await signUp({
           uid: userCredential.user.uid,
