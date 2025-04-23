@@ -16,8 +16,7 @@ const CategoryPage = ({ params }: CategoryPageProps) => {
 
   return (
     <div className="flex flex-col items-start gap-5">
-      <h1 className="text-3xl font-bold mb-6">Jobs in {category}</h1>
-      <FeaturedJobs />
+      <FeaturedJobs title={category[0].toUpperCase() + category.slice(1)} />
     </div>
   );
 };
