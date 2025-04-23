@@ -7,7 +7,7 @@ export async function GET() {
 }
 
 export async function POST(request: Request) {
-  const { type, role, level, techstack, amount, userid } = await request.json;
+  const { type, role, level, techstack, amount, userid }: any = await request.json;
 
   try {
     const { text: questions } = await generateText({
@@ -45,4 +45,7 @@ export async function POST(request: Request) {
     console.error(error);
     return Response.json({ success: false, error }, { status: 500 });
   }
+}
+function google(arg0: string): import("ai").LanguageModelV1 {
+  throw new Error("Function not implemented.");
 }
