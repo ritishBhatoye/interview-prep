@@ -1,4 +1,4 @@
-import { FooterDataType } from "@/types";
+import { FooterDataType, HeaderDataTypeProps } from "@/types";
 
 export const headerData: HeaderDataTypeProps[] = [
   {
