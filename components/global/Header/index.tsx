@@ -18,8 +18,10 @@ interface HeaderProps {
 
 export default function Header({ user }: HeaderProps) {
   const router = useRouter();
-  const [isSelectTab, setIsSelectTab] = useState(1);
-  const [isLogButton, setIsLogButton] = useState(false);
+  const [isSelectTab, setIsSelectTab]: [number, React.Dispatch<React.SetStateAction<number>>] =
+    useState(1);
+  const [isLogButton, setIsLogButton]: [boolean, React.Dispatch<React.SetStateAction<boolean>>] =
+    useState(false);
 
   const handleLogout = async () => {
     try {
