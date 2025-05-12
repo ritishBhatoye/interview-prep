@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { headerData } from "@/helpers";
 import { HeaderDataTypeProps, User } from "@/types";
-import { UserIcon } from "@heroicons/react/24/outline";
+import UserIcon from "@heroicons/react/24/solid/UserIcon";
 
 interface HeaderProps {
   user: User | null;
@@ -35,10 +35,10 @@ export default function Header({ user }: HeaderProps) {
           ))}
         </ul>
         {user && (
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ml-auto flex items-center gap-3 cursor-pointer shadow-md hover:bg-opacity-40 rounded-4xl bg-black p-4 ">
             <UserIcon className="w-6 h-5" scale={0.2} />
-            <p className="text-gray-500">Welcome,</p>
-            <p className="text-primary-100 font-medium">{user.name}</p>
+
+            <p className="text-primary-100 font-medium underline">{user.name}</p>
           </div>
         )}
       </nav>
