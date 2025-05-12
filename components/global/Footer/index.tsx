@@ -8,6 +8,7 @@ import FooterSection from "./footerElements/FooterSection";
 import Feedback from "./footerElements/Feedback";
 import Subscription from "./footerElements/Subscription";
 import SocialIcons from "./footerElements/SocialIcons";
+import { FooterDataType } from "@/types";
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
         <Feedback />
         <div className="flex flex-col gap-5 justify-between">
           <div className="grid grid-cols-1 w-full justify-end md:grid-cols-3 gap-12">
-            {footerData.slice(0, 2).map((footer) => (
+            {footerData.slice(0, 2).map((footer: FooterDataType) => (
               <FooterSection key={footer.id} footer={footer} />
             ))}
 
@@ -24,7 +25,7 @@ const Footer = () => {
               <Image src={"/logo.svg"} width={40} height={40} alt="logo" />
             </Link>
 
-            {footerData.slice(2, 3).map((footer) => (
+            {footerData.slice(2, 3).map((footer: FooterDataType) => (
               <FooterSection key={footer.id} footer={footer} />
             ))}
           </div>

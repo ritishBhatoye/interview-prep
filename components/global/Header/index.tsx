@@ -5,8 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { headerData } from "@/helpers";
+import { HeaderDataTypeProps, User } from "@/types";
 
-export default function Header() {
+interface HeaderProps {
+  user: User | null;
+}
+
+export default function Header({ user }: HeaderProps) {
   const [isSelectTab, setIsSelectTab] = useState(1);
   return (
     <div className="mx-auto py-10 w-10/12 2xl:w-9/12 max-w-screen-2xl">
@@ -16,7 +21,7 @@ export default function Header() {
           <h2 className="text-primary-100">PrepWise</h2>
         </Link>
         <ul className="flex flex-row list-none gap-5 justify-between">
-          {headerData.map((header) => (
+          {headerData.map((header: HeaderDataTypeProps) => (
             <Link onClick={() => setIsSelectTab(header.id)} href={header.link} key={header.id}>
               <li
                 className={`text-sm md:text-base ${
@@ -28,6 +33,12 @@ export default function Header() {
             </Link>
           ))}
         </ul>
+        {user && (
+          <div className="ml-auto flex items-center gap-2">
+            <p className="text-gray-500">Welcome,</p>
+            <p className="text-primary-100 font-medium">{user.name}</p>
+          </div>
+        )}
       </nav>
     </div>
   );
