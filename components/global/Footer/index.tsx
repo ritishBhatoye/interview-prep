@@ -12,7 +12,7 @@ import SocialIcons from "./footerElements/SocialIcons";
 const Footer = () => {
   return (
     <div className="h-full py-20 w-full" style={{ background: "#22242A" }}>
-      <footer className="w-10/12 2xl:w-6/12 mx-auto   items-start justify-between gap-20 flex flex-row">
+      <footer className="w-10/12 2xl:w-9/12 mx-auto   items-start justify-between gap-20 flex flex-row">
         <Feedback />
         <div className="flex flex-col gap-5 justify-between">
           <div className="grid grid-cols-1 w-full justify-end md:grid-cols-3 gap-12">

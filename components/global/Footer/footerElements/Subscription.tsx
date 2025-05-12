@@ -34,9 +34,10 @@ const Subscription = () => {
       <Form {...form}>
         <form
           // onSubmit={form.handleSubmit(onSubmit)}
-          className="w-full space-y-6 mt-4 form"
+          className="w-full space-y-5 mt-4 form"
         >
           <FormField
+            containerClassName=""
             control={form.control}
             name="email"
             label="SUBSCRIPTION"
