@@ -14,6 +14,7 @@ interface HeaderProps {
 
 export default function Header({ user }: HeaderProps) {
   const [isSelectTab, setIsSelectTab] = useState(1);
+  const [isLogButton, setIsLogButton] = useState(false);
   return (
     <div className="mx-auto py-10 w-10/12 2xl:w-9/12 max-w-screen-2xl">
       <nav className="flex flex-row items-center list-none gap-12 bg-white/8 hover:bg-white/10 rounded-4xl p-4">
