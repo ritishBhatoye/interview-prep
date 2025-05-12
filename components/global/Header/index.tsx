@@ -35,7 +35,7 @@ export default function Header({ user }: HeaderProps) {
           ))}
         </ul>
         {user && (
-          <div className="ml-auto flex items-center gap-3 cursor-pointer shadow-md hover:bg-opacity-40 rounded-4xl bg-black p-4 ">
+          <div className="ml-auto flex items-center gap-3 hover:gap-5 cursor-pointer shadow-md hover:bg-opacity-40 rounded-4xl bg-black p-4 ">
             <UserIcon className="w-6 h-5" scale={0.2} />
 
             <p className="text-primary-100 font-medium underline">{user.name}</p>
