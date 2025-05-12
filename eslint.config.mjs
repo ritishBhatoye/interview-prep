@@ -20,18 +20,23 @@ const eslintConfig = [
   ),
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
+    plugins: ["unused-imports"],
     rules: {
-      // React Rules
-      "react/react-in-jsx-scope": "off", // Not needed in Next.js
-      "react/prop-types": "off", // We're using TypeScript
+      // ✅ React Rules
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
       "react/jsx-props-no-spreading": "warn",
       "react/no-unused-prop-types": "warn",
       "react/require-default-props": "off",
       "react/jsx-no-useless-fragment": "warn",
 
-      // TypeScript Rules
+      // ✅ React Hooks Rules
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+
+      // ✅ TypeScript Rules
       "@typescript-eslint/no-unused-vars": [
-        "warn",
+        "error",
         {
           argsIgnorePattern: "^_",
           varsIgnorePattern: "^_",
@@ -42,27 +47,39 @@ const eslintConfig = [
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-non-null-assertion": "warn",
       "@typescript-eslint/no-empty-interface": "warn",
+      "@typescript-eslint/no-shadow": ["error"],
 
-      // Import Rules
+      // ✅ Unused Imports & Variables
+      "no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
+
+      // ✅ Import Rules
       "import/prefer-default-export": "off",
       "import/no-default-export": "off",
 
-      // General Rules
+      // ✅ General Rules
       "no-console": ["warn", { allow: ["warn", "error"] }],
-      "no-unused-vars": "off", // Using TypeScript's checker instead
       "no-underscore-dangle": "off",
       "no-use-before-define": "off",
       "no-shadow": "off",
-      "@typescript-eslint/no-shadow": ["error"],
       camelcase: "warn",
       "spaced-comment": "warn",
       "no-duplicate-imports": "error",
 
-      // Next.js specific rules
+      // ✅ Next.js specific
       "@next/next/no-html-link-for-pages": "error",
       "@next/next/no-img-element": "warn",
 
-      // Accessibility Rules
+      // ✅ A11y
       "jsx-a11y/alt-text": "warn",
       "jsx-a11y/aria-props": "warn",
       "jsx-a11y/aria-proptypes": "warn",
@@ -70,11 +87,11 @@ const eslintConfig = [
       "jsx-a11y/role-has-required-aria-props": "warn",
       "jsx-a11y/role-supports-aria-props": "warn",
 
-      // Add this to disable function call argument wrapping
+      // ✅ Function Formatting
       "function-call-argument-newline": ["error", "consistent"],
       "function-paren-newline": ["error", "consistent"],
 
-      // Add this to disable prettier formatting rules
+      // ✅ Prettier Custom Overrides
       "prettier/prettier": [
         "error",
         {
