@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import UserIcon from "@heroicons/react/24/solid/UserIcon";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -18,9 +18,15 @@ interface HeaderProps {
 
 export default function Header({ user }: HeaderProps) {
   const router = useRouter();
-  const [activeTab, setActiveTab]: [number, React.Dispatch<React.SetStateAction<number>>] =
-    useState(headerData[0].id);
+  const pathname = usePathname();
   const [isLogButton, setIsLogButton] = useState(false);
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
 
   const handleLogout = async () => {
     try {
@@ -41,10 +47,10 @@ export default function Header({ user }: HeaderProps) {
         </Link>
         <ul className="flex flex-row list-none gap-5 justify-between">
           {headerData.map((header: HeaderDataTypeProps) => (
-            <Link href={header.link} key={header.id} onClick={() => setActiveTab(header.id)}>
+            <Link href={header.link} key={header.id}>
               <li
                 className={`text-sm md:text-base ${
-                  activeTab === header.id ? "rounded-4xl bg-black/30 p-4 text-white" : ""
+                  isActive(header.link) ? "rounded-4xl bg-black/30 p-4 text-white" : ""
                 } cursor-pointer lg:text-lg text-gray-500 hover:text-white transition-all duration-200 hover:rounded-4xl hover:p-4 hover:bg-black/30 p-4`}
               >
                 {header.label}
