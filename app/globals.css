@@ -485,7 +485,3 @@
     background: linear-gradient(to top right, var(--ocean-blue-500), var(--green-shimmer));
   }
 }
-
-@utility perspective-1000 {
-  perspective: 1000px;
-}

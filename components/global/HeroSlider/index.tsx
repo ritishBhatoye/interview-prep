@@ -152,9 +152,10 @@ export default function HeroSection(): React.JSX.Element {
   }, []);
 
   return (
-    <section
+    <div
       ref={containerRef}
-      className="relative overflow-hidden min-h-screen bg-gradient-to-br from-black to-lime-50 flex items-center"
+      className="relative overflow-hidden min-h-screen bg-gradient-to-br from-black to-lime-50 flex items-center w-fu
+      "
     >
       <div className="absolute inset-0 -z-20 overflow-hidden">
         {bgImages.map((img, index) => (
@@ -409,6 +410,6 @@ export default function HeroSection(): React.JSX.Element {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

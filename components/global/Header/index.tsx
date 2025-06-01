@@ -39,6 +39,13 @@ export default function Header({ user }: HeaderProps) {
     }
   };
 
+  const practices = [
+    { name: "Top Companies", count: "1000+ Jobs" },
+    { name: "Remote Jobs", count: "500+ Listings" },
+    { name: "Personalized Matches", count: "AI Powered" },
+    { name: "Career Growth", count: "Expert Resources" },
+  ];
+
   return (
     <div className="mx-auto py-10 w-10/12 2xl:w-9/12 max-w-screen-2xl">
       <nav className="flex flex-row items-center list-none gap-12 bg-white/8 hover:bg-white/10 rounded-4xl p-4">
