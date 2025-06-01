@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { signIn, signUp } from "@/lib/actions/auth.action";
 import FormField from "./elements/FormField";
 import { FormType } from "@/types";
+import { motion } from "framer-motion";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
@@ -98,10 +99,27 @@ const AuthForm = ({ type }: { type: FormType }) => {
             width={50}
             className={"object-fit"}
           />
-          <h2 className="text-primary-100">PrepWise</h2>
+          <motion.h2
+            className="text-teal-400"
+            style={{ fontFamily: "'Homemade Apple', cursive" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            // className="text-primary-100"
+          >
+            PrepWise
+          </motion.h2>
         </div>
 
-        <h3 className="text-center">Practice job interviews with AI</h3>
+        <motion.h3
+          style={{ fontFamily: "cursive" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-transparent text-4xl bg-clip-text bg-gradient-to-r from-blue-500 to-green-500 text-center"
+        >
+          Practice job interviews with AI
+        </motion.h3>
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 mt-4 form">
