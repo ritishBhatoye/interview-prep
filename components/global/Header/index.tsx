@@ -45,7 +45,7 @@ export default function Header({ user }: HeaderProps) {
         <Link href="/" className="flex flex-row  justify-center gap-2">
           <Image src="/assets/logo.png" width={38} height={50} alt="logo" />
           <motion.h2
-            className="text-teal-400"
+            className="text-primary-200"
             style={{ fontFamily: "'Homemade Apple', cursive" }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
