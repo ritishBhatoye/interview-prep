@@ -3,7 +3,6 @@
 @layer theme, base, components, utilities;
 @plugin "tailwindcss-animate";
 
-
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -72,37 +71,37 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --grey-matte-100: #22242A;
-  --grey-matte-200: #17181C;
-  --green-shimmer: #56CDAD;
-  --midnight-dream: #4640DE;
-   
-  --fluxx: #FFB836;
+  --grey-matte-100: #22242a;
+  --grey-matte-200: #17181c;
+  --green-shimmer: #56cdad;
+  --midnight-dream: #4640de;
 
-  --cosmic-purple-100: #E4D0FF;
-  --cosmic-purple-200: #C3A9FF;
-  --cosmic-purple-500: #8B5CF6;
-  --cosmic-purple-900: #4C1D95;
-  
-  --ocean-blue-100: #CAF0F8;
-  --ocean-blue-200: #90E0EF;
-  --ocean-blue-500: #0077B6;
-  --ocean-blue-900: #03045E;
-  
-  --sunset-orange-100: #FFE5D9;
-  --sunset-orange-200: #FFBA08;
-  --sunset-orange-500: #FB8500;
-  --sunset-orange-900: #DC2F02;
-  
-  --cyber-mint-100: #CCFBF1;
-  --cyber-mint-200: #5EEAD4;
-  --cyber-mint-500: #14B8A6;
-  --cyber-mint-900: #134E4A;
-  
-  --neon-pink: #FF10F0;
-  --neon-blue: #00FFFF;
-  --neon-green: #39FF14;
-  --neon-purple: #B026FF;
+  --fluxx: #ffb836;
+
+  --cosmic-purple-100: #e4d0ff;
+  --cosmic-purple-200: #c3a9ff;
+  --cosmic-purple-500: #8b5cf6;
+  --cosmic-purple-900: #4c1d95;
+
+  --ocean-blue-100: #caf0f8;
+  --ocean-blue-200: #90e0ef;
+  --ocean-blue-500: #0077b6;
+  --ocean-blue-900: #03045e;
+
+  --sunset-orange-100: #ffe5d9;
+  --sunset-orange-200: #ffba08;
+  --sunset-orange-500: #fb8500;
+  --sunset-orange-900: #dc2f02;
+
+  --cyber-mint-100: #ccfbf1;
+  --cyber-mint-200: #5eead4;
+  --cyber-mint-500: #14b8a6;
+  --cyber-mint-900: #134e4a;
+
+  --neon-pink: #ff10f0;
+  --neon-blue: #00ffff;
+  --neon-green: #39ff14;
+  --neon-purple: #b026ff;
 }
 
 .dark {
@@ -331,7 +330,7 @@
   .card-interview {
     @apply dark-gradient rounded-2xl min-h-full flex flex-col p-6 relative overflow-hidden gap-10 justify-between;
 
-    .badge-text{
+    .badge-text {
       @apply text-sm font-semibold capitalize;
     }
   }
@@ -389,46 +388,98 @@
   .animate-orbit {
     animation: orbit 15s linear infinite;
   }
-  
+
   .tech-icons-container {
     @apply relative w-[300px] h-[300px] flex items-center justify-center;
   }
-  
+
   .tech-icon {
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hover:scale-125 transition-transform;
   }
 
-  .bg-grey-matte-100 { background-color: var(--grey-matte-100); }
-  .bg-grey-matte-200 { background-color: var(--grey-matte-200); }
-  .bg-green-shimmer { background-color: var(--green-shimmer); }
-  .bg-fluxx { background-color: var(--fluxx); }
-  .bg-midnight-dream { background-color: var(--midnight-dream); }
-  
-  .bg-cosmic-purple-100 { background-color: var(--cosmic-purple-100); }
-  .bg-cosmic-purple-200 { background-color: var(--cosmic-purple-200); }
-  .bg-cosmic-purple-500 { background-color: var(--cosmic-purple-500); }
-  .bg-cosmic-purple-900 { background-color: var(--cosmic-purple-900); }
-  
-  .bg-ocean-blue-100 { background-color: var(--ocean-blue-100); }
-  .bg-ocean-blue-200 { background-color: var(--ocean-blue-200); }
-  .bg-ocean-blue-500 { background-color: var(--ocean-blue-500); }
-  .bg-ocean-blue-900 { background-color: var(--ocean-blue-900); }
-  
-  .text-grey-matte-100 { color: var(--grey-matte-100); }
-  .text-grey-matte-200 { color: var(--grey-matte-200); }
-  .text-green-shimmer { color: var(--green-shimmer); }
-  .text-fluxx { color: var(--fluxx); }
-  .text-midnight-dream { color: var(--midnight-dream); }
-  
-  .text-cosmic-purple-100 { color: var(--cosmic-purple-100); }
-  .text-cosmic-purple-200 { color: var(--cosmic-purple-200); }
-  .text-cosmic-purple-500 { color: var(--cosmic-purple-500); }
-  .text-cosmic-purple-900 { color: var(--cosmic-purple-900); }
-  
-  .text-ocean-blue-100 { color: var(--ocean-blue-100); }
-  .text-ocean-blue-200 { color: var(--ocean-blue-200); }
-  .text-ocean-blue-500 { color: var(--ocean-blue-500); }
-  .text-ocean-blue-900 { color: var(--ocean-blue-900); }
+  .bg-grey-matte-100 {
+    background-color: var(--grey-matte-100);
+  }
+  .bg-grey-matte-200 {
+    background-color: var(--grey-matte-200);
+  }
+  .bg-green-shimmer {
+    background-color: var(--green-shimmer);
+  }
+  .bg-fluxx {
+    background-color: var(--fluxx);
+  }
+  .bg-midnight-dream {
+    background-color: var(--midnight-dream);
+  }
+
+  .bg-cosmic-purple-100 {
+    background-color: var(--cosmic-purple-100);
+  }
+  .bg-cosmic-purple-200 {
+    background-color: var(--cosmic-purple-200);
+  }
+  .bg-cosmic-purple-500 {
+    background-color: var(--cosmic-purple-500);
+  }
+  .bg-cosmic-purple-900 {
+    background-color: var(--cosmic-purple-900);
+  }
+
+  .bg-ocean-blue-100 {
+    background-color: var(--ocean-blue-100);
+  }
+  .bg-ocean-blue-200 {
+    background-color: var(--ocean-blue-200);
+  }
+  .bg-ocean-blue-500 {
+    background-color: var(--ocean-blue-500);
+  }
+  .bg-ocean-blue-900 {
+    background-color: var(--ocean-blue-900);
+  }
+
+  .text-grey-matte-100 {
+    color: var(--grey-matte-100);
+  }
+  .text-grey-matte-200 {
+    color: var(--grey-matte-200);
+  }
+  .text-green-shimmer {
+    color: var(--green-shimmer);
+  }
+  .text-fluxx {
+    color: var(--fluxx);
+  }
+  .text-midnight-dream {
+    color: var(--midnight-dream);
+  }
+
+  .text-cosmic-purple-100 {
+    color: var(--cosmic-purple-100);
+  }
+  .text-cosmic-purple-200 {
+    color: var(--cosmic-purple-200);
+  }
+  .text-cosmic-purple-500 {
+    color: var(--cosmic-purple-500);
+  }
+  .text-cosmic-purple-900 {
+    color: var(--cosmic-purple-900);
+  }
+
+  .text-ocean-blue-100 {
+    color: var(--ocean-blue-100);
+  }
+  .text-ocean-blue-200 {
+    color: var(--ocean-blue-200);
+  }
+  .text-ocean-blue-500 {
+    color: var(--ocean-blue-500);
+  }
+  .text-ocean-blue-900 {
+    color: var(--ocean-blue-900);
+  }
 
   .bg-custom-gradient {
     background: linear-gradient(to top right, var(--ocean-blue-500), var(--green-shimmer));
