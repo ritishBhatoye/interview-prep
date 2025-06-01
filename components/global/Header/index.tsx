@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { headerData } from "@/helpers";
 import { HeaderDataTypeProps, User } from "@/types";
 import { signOut } from "@/lib/actions/auth.action";
+import { motion } from "framer-motion";
 
 interface HeaderProps {
   user: User | null;
@@ -41,9 +42,17 @@ export default function Header({ user }: HeaderProps) {
   return (
     <div className="mx-auto py-10 w-10/12 2xl:w-9/12 max-w-screen-2xl">
       <nav className="flex flex-row items-center list-none gap-12 bg-white/8 hover:bg-white/10 rounded-4xl p-4">
-        <Link href="/" className="flex flex-row items-center justify-center  gap-2">
-          <Image src="/logo.png" width={48} height={50} alt="logo" />
-          <h2 className="text-primary-100">PrepWise</h2>
+        <Link href="/" className="flex flex-row  justify-center gap-2">
+          <Image src="/assets/logo.png" width={38} height={50} alt="logo" />
+          <motion.h2
+            className="text-teal-400"
+            style={{ fontFamily: "'Homemade Apple', cursive" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            PrepWise
+          </motion.h2>
         </Link>
         <ul className="flex flex-row list-none gap-5 justify-between">
           {headerData.map((header: HeaderDataTypeProps) => (
