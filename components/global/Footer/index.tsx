@@ -22,7 +22,7 @@ const Footer = () => {
             ))}
 
             <Link href="/" className="flex items-baseline justify-end gap-2">
-              <Image src={"/logo.svg"} width={40} height={40} alt="logo" />
+              <Image src={"/logo.png"} width={40} height={40} alt="logo" />
             </Link>
 
             {footerData.slice(2, 3).map((footer: FooterDataType) => (

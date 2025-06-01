@@ -42,7 +42,7 @@ export default function Header({ user }: HeaderProps) {
     <div className="mx-auto py-10 w-10/12 2xl:w-9/12 max-w-screen-2xl">
       <nav className="flex flex-row items-center list-none gap-12 bg-white/8 hover:bg-white/10 rounded-4xl p-4">
         <Link href="/" className="flex flex-row items-center gap-2">
-          <Image src={"/logo.svg"} width={38} height={32} alt="logo" />
+          <Image src={"/logo.png"} width={38} height={32} alt="logo" />
           <h2 className="text-primary-100">PrepWise</h2>
         </Link>
         <ul className="flex flex-row list-none gap-5 justify-between">
