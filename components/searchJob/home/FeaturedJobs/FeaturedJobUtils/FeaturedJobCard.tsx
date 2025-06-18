@@ -19,7 +19,7 @@ const FeaturedJobCard = ({ featureJob }: props) => {
         rotateY: 1,
         transition: { duration: 0.2 },
       }}
-      className="flex flex-col perspective-1000 p-5 bg-gradient-to-tl from-blue-500/80 to-blue-950/100 hover:from-blue-800/50 hover:to-blue-900/30 duration-200  hover:opacity-90 cursor-pointer rounded-4xl "
+      className="flex flex-col perspective-1000 p-5 bg-gradient-to-tl from-black/90 to-blue-950/100 hover:from-blue-800/50 hover:to-blue-900/30 duration-200  hover:opacity-90 cursor-pointer rounded-4xl "
     >
       <div className="flex flex-row justify-between items-start">
         <Image src={featureJob.logo} alt={featureJob.company} height={50} width={50} />
