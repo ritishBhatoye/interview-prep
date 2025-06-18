@@ -8,45 +8,45 @@ import "keen-slider/keen-slider.min.css";
 
 const slides = [
   {
-    title: "Awaken Your Inner Peace",
+    title: "Find Your Dream Career",
     description:
-      "Immerse yourself in transformative yoga and meditation sessions that nurture your body, mind, and soul.",
+      "Discover thousands of opportunities from top companies and take the next step in your professional journey.",
     image:
-      "https://images.unsplash.com/photo-1554347761-7520bdb7bc5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    tag: "Meditation & Balance",
-    quote: "Yoga is the journey of the self, through the self, to the self.",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    tag: "Career Growth",
+    quote: "Your dream job is just a click away.",
   },
   {
-    title: "Breathe, Stretch, Transform",
+    title: "Connect with Top Employers",
     description:
-      "Harness the ancient power of breath and movement to embrace calm, clarity, and inner strength.",
+      "Build meaningful connections with industry leaders and showcase your skills to potential employers.",
     image:
-      "https://images.unsplash.com/photo-1598986641446-d1fdb9469a7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    tag: "Holistic Wellness",
-    quote: "The body benefits from movement, and the mind benefits from stillness.",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    tag: "Networking",
+    quote: "Your network is your net worth.",
   },
   {
-    title: "Personalized Healing Journey",
+    title: "Career Development",
     description:
-      "Our certified yoga therapists guide you through deeply personalized practices to restore your natural flow.",
+      "Access resources, training, and mentorship to enhance your skills and advance your career.",
     image:
-      "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    tag: "Therapeutic Yoga",
-    quote: "Yoga does not just change the way we see things, it transforms the person who sees.",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    tag: "Professional Growth",
+    quote: "Invest in yourself, your career will thank you.",
   },
 ];
 
 const practices = [
-  { name: "Hatha Yoga", count: "12+ Classes" },
-  { name: "Meditation", count: "8+ Sessions" },
-  { name: "Breathwork", count: "6+ Techniques" },
-  { name: "Sound Healing", count: "4+ Experiences" },
+  { name: "Tech Jobs", count: "10k+ Openings" },
+  { name: "Remote Work", count: "5k+ Positions" },
+  { name: "Startups", count: "2k+ Companies" },
+  { name: "Global Roles", count: "15k+ Opportunities" },
 ];
 
 // Background images for parallax effect
 const bgImages = [
-  "https://images.unsplash.com/photo-1588286840104-8957b019727f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Serene nature
-  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Mountain vista
+  "https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Modern office
+  "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80", // Professional workspace
 ];
 
 const fadeInUpVariants = {
@@ -154,8 +154,7 @@ export default function HeroSection(): React.JSX.Element {
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden min-h-screen bg-gradient-to-br from-black to-lime-50 flex items-center w-fu
-      "
+      className="relative overflow-hidden min-h-screen bg-gradient-to-br from-blue-900 to-indigo-900 flex items-center w-full"
     >
       <div className="absolute inset-0 -z-20 overflow-hidden">
         {bgImages.map((img, index) => (
@@ -309,7 +308,7 @@ export default function HeroSection(): React.JSX.Element {
                   initial="hidden"
                   animate="visible"
                 >
-                  <p className="font-semibold text-teal-300">{practice.name}</p>
+                  <p className="font-semibold text-blue-300">{practice.name}</p>
                   <p className="text-sm text-gray-300">{practice.count}</p>
                 </motion.div>
               ))}
@@ -319,12 +318,12 @@ export default function HeroSection(): React.JSX.Element {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-teal-600 text-white px-8 py-4 sm:py-5 rounded-xl font-medium shadow-lg hover:bg-teal-700 transition"
+                className="bg-blue-600 text-white px-8 py-4 sm:py-5 rounded-xl font-medium shadow-lg hover:bg-blue-700 transition"
                 variants={fadeInUpVariants}
                 initial="hidden"
                 animate="visible"
               >
-                Begin Your Journey
+                Find Jobs
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -334,7 +333,7 @@ export default function HeroSection(): React.JSX.Element {
                 initial="hidden"
                 animate="visible"
               >
-                Learn More
+                Post a Job
               </motion.button>
             </div>
 
@@ -385,7 +384,7 @@ export default function HeroSection(): React.JSX.Element {
                       className="object-cover"
                       priority={idx === 0}
                     />
-                    <div className="absolute bottom-6 left-6 bg-black/40 backdrop-blur-sm px-4 py-2 rounded-full font-medium text-sm text-white">
+                    <div className="absolute bottom-6 left-6 bg-blue-900/40 backdrop-blur-sm px-4 py-2 rounded-full font-medium text-sm text-white">
                       {slide.tag}
                     </div>
                   </div>
@@ -400,7 +399,7 @@ export default function HeroSection(): React.JSX.Element {
                   onClick={() => instanceRef.current?.moveToIdx(idx)}
                   className={`w-3 h-3 rounded-full transition-all ${
                     idx === (instanceRef.current?.track?.details?.rel || 0)
-                      ? "bg-teal-400 scale-110"
+                      ? "bg-blue-400 scale-110"
                       : "bg-white/30 hover:bg-white/50"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
