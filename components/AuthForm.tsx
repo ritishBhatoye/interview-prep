@@ -1,23 +1,23 @@
 "use client";
 
-import { z } from "zod";
-import Link from "next/link";
-import Image from "next/image";
-import { toast } from "sonner";
 import { auth } from "@/firebase/client";
-import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { z } from "zod";
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
-import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
+import { Form } from "@/components/ui/form";
 
 import { signIn, signUp } from "@/lib/actions/auth.action";
-import FormField from "./elements/FormField";
 import { FormType } from "@/types";
 import { motion } from "framer-motion";
+import FormField from "./elements/FormField";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
@@ -89,8 +89,8 @@ const AuthForm = ({ type }: { type: FormType }) => {
   const isSignIn = type === "sign-in";
 
   return (
-    <div className="card-border lg:min-w-[566px]">
-      <div className="flex flex-col gap-6 card py-14 px-10">
+    <div className="bg-gradient-to-b from-[#4B4D4F] to-[#4B4D4F33] p-0.5 rounded-2xl w-fit lg:min-w-[566px]">
+      <div className="flex flex-col gap-6 bg-gradient-to-b from-[#1A1C20] to-[#08090D] rounded-2xl min-h-full py-14 px-10">
         <div className="flex flex-row   gap-2 items-center justify-center">
           <Image
             src="/assets/logo.png"
@@ -122,7 +122,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
         </motion.h3>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 mt-4 form">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 mt-4">
             {!isSignIn && (
               <FormField
                 control={form.control}
@@ -149,7 +149,7 @@ const AuthForm = ({ type }: { type: FormType }) => {
               type="password"
             />
 
-            <Button className="btn" type="submit">
+            <Button className="w-full bg-primary-200 text-dark-100 hover:bg-primary-200/80 rounded-full min-h-10 font-bold px-5 cursor-pointer" type="submit">
               {isSignIn ? "Sign In" : "Create an Account"}
             </Button>
           </form>

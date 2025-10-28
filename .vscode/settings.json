@@ -45,5 +45,5 @@
   "editor.suggest.selectionMode": "first",
 
   // 👇 Optional PowerMode etc.
- "powermode.enabled": false
+"powermode.enabled": false
 }

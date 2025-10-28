@@ -1,14 +1,14 @@
 import dayjs from "dayjs";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
-import {
-  getFeedbackByInterviewId,
-  getInterviewById,
-} from "@/lib/actions/general.action";
 import { Button } from "@/components/ui/button";
 import { getCurrentUser } from "@/lib/actions/auth.action";
+import {
+    getFeedbackByInterviewId,
+    getInterviewById,
+} from "@/lib/actions/general.action";
 
 const Feedback = async ({ params }: RouteParams) => {
   const { id } = await params;
@@ -23,7 +23,7 @@ const Feedback = async ({ params }: RouteParams) => {
   });
 
   return (
-    <section className="section-feedback">
+    <section className="flex flex-col gap-8 max-w-5xl mx-auto max-sm:px-4 text-lg leading-7">
       <div className="flex flex-row justify-center">
         <h1 className="text-4xl font-semibold">
           Feedback on the Interview -{" "}
@@ -92,8 +92,8 @@ const Feedback = async ({ params }: RouteParams) => {
         </ul>
       </div>
 
-      <div className="buttons">
-        <Button className="btn-secondary flex-1">
+      <div className="flex w-full justify-evenly gap-4 max-sm:flex-col max-sm:items-center">
+        <Button className="w-fit bg-dark-200 text-primary-200 hover:bg-dark-200/80 rounded-full font-bold px-5 cursor-pointer min-h-10 flex-1">
           <Link href="/" className="flex w-full justify-center">
             <p className="text-sm font-semibold text-primary-200 text-center">
               Back to dashboard
@@ -101,7 +101,7 @@ const Feedback = async ({ params }: RouteParams) => {
           </Link>
         </Button>
 
-        <Button className="btn-primary flex-1">
+        <Button className="w-fit bg-primary-200 text-dark-100 hover:bg-primary-200/80 rounded-full font-bold px-5 cursor-pointer min-h-10 flex-1">
           <Link
             href={`/interview/${id}`}
             className="flex w-full justify-center"

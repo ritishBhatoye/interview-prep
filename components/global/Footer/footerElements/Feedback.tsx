@@ -1,6 +1,5 @@
 "use client";
 // import ".";
-import React from "react";
 
 import { Form } from "@/components/ui/form";
 
@@ -8,9 +7,9 @@ import { Button } from "@/components/ui/button";
 // import { Input } from "@/components/ui/input";
 import { z } from "zod";
 // import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import FormField from "@/components/elements/FormField";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 
 const feedbackFormSchema = () => {
   return z.object({
@@ -61,7 +60,7 @@ const Feedback = () => {
             />
           </form>
         </Form>
-        <Button className="btn-primary max-sm:w-full mt-5">
+        <Button className="w-fit bg-primary-200 text-dark-100 hover:bg-primary-200/80 rounded-full font-bold px-5 cursor-pointer min-h-10 max-sm:w-full mt-5">
           Send a Request
         </Button>
       </div>
