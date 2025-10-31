@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Mona_Sans } from "next/font/google";
 
-import "./globals.css";
+import { StoreProvider } from "@/lib/redux/StoreProvider";
 import { Toaster } from "sonner";
+import "./globals.css";
 
 const monaSans = Mona_Sans({
   variable: "--font-geist-sans",
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark ">
       <body className={`${monaSans.className} antialiased pattern`}>
-        {children}
-        <Toaster />
+        <StoreProvider>
+          {children}
+          <Toaster />
+        </StoreProvider>
       </body>
     </html>
   );

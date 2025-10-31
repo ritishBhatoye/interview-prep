@@ -5,7 +5,7 @@
   },
   "redhat.telemetry.enabled": true,
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "workbench.iconTheme": "vscode-icons",
   "explorer.confirmDelete": false,
